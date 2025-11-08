@@ -1,1 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pay ₹5,000 - Prince Studio Kaimganj</title>
+  <style>
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: #f5f6fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card{
+      background: white;
+      border-radius: 16px;
+      padding: 30px 24px 40px;
+      text-align: center;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+      width: 360px;
+    }
+    h2{
+      margin: 0;
+      font-size: 24px;
+      color: #111;
+    }
+    h3{
+      margin: 6px 0 18px;
+      font-weight: 500;
+      font-size: 16px;
+      color: #444;
+    }
+    p{
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .qr{
+      width: 240px;
+      height: 240px;
+      margin: 18px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    button{
+      background: #111827;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+    button:hover{ background: #1f2937; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Pay ₹5,000</h2>
+    <h3>Prince Studio Kaimganj</h3>
+    <p>Payee: <strong>LAKSHMIKANT SHAKYA</strong><br>VPA: 9455594433@ybl</p>
+    <p style="margin-top:12px;">Or scan this QR code with any UPI scanner on your phone.</p>
+    <img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAAC0UlEQVR4nO2b0U4lMQxD7dX8/y97H+ykRVqthCiX9lJAzMCch6g3chOnQ+ETX38+A1/60j9OPwB9JxCiKEIUABACqInYJ+5T6QdAFpcC4eWG1x6UH4bYKO5T6QcA6BWlnN0QIRD+BPzIl33ifgdapAgAuURI+PpIfgUd1bZsA4qySP+kvzOSN6YfIPKM5LVqo4S8iU7EPnGfSo/01X++C90n7lNpDrXIJqm6U5RlQvaJ+1T6qfWklzalIFJ6E7300E5xH0+7zSFEWUFIl4HV8Nx6cBHtnKa85gAIkFCSWpSUHXOruA+mvbCAQIIiUxG2lr8sknenoa5CpFQrKVmUH6kf7hP3wbQiG6TU+yPk9sfyLfLq9xLaphQAil0AVn/DoSde/X3iPpWOWviCISRlDMYejLDsE/ep9AMLCuILuu6uDVKzRXjr7wV064mFwx6VRvcja4lVfKO4T6Uj0ZXSrebd6PiB3PHsE/eptOc7vVnG8Ja9cLWHcvudRfTYKOU7qIpwXwylQt8n7lPpJ9fkOKLa9V+2c3X3y2W0ADJ9TQ0ZyBrKK0PkW3+voLulsXZXbnMkNeugxN0vF9AsIfkwN8NY8fGRfHMkv4hOnyPJrjcJxv8mCIB2CneL+0C6+p1U2aPonqYMfeBqo7hPpadhmv9O75OCvKRd1x9cQ6fYnmbw7YKX/W07C9f/XkGz8lejhe+Suxhc/2QVPSY6w5CtzAY6ua8fu4jO+dhItWKhqPtNtWN1z0OsoEucyysZVkqXiMYA3fz+Ov1Bpst37SFDH77nnaetoaf3G3ptAUDMYfsa7dz+cgk9zYunk2w1Pi7pLotln7hPpef3G5BeJ1ZKS8s4db9P3G9Bi6615frE50/6MNCtT1bTrdMeNPjMZjVDL43kvemu+jDeJvGvssHhV3s2i/tAmn0aM+//jRpwDBy6aNwn7lPpqf7+4Ugufen19F/XvNwoLC+ylQAAAABJRU5ErkJggg==" alt="UPI QR Code">
+    <button id="payBtn">Open UPI app to pay ₹5,000</button>
+  </div>
 
+  <script>
+    const upi = "upi://pay?pa=9455594433@ybl&pn=LAKSHMIKANT%20SHAKYA&mc=0000&mode=02&purpose=00&am=5000&cu=INR";
+    const btn = document.getElementById('payBtn');
+    btn.addEventListener('click', () => {
+      window.location.href = upi;
+      setTimeout(() => {
+        //alert('If your browser blocked the UPI app, please copy the link manually in your UPI app.');
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
